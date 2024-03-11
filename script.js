@@ -20,7 +20,34 @@ alert('Welcome to the GUESS THAT NUMBER! Please click OK to start the game');
 // Game Restarts as long as the restartGame has a value of true
 while(restartGame){
 
+    // Asks the user to enter a number to set the upper bound for the random number that will be created. Also using parseInt to attempt to convert the user's response into the number value.
     rangeNum = prompt('Please enter a maximum number for the range:');
+    rangeNum = parseInt(rangeNum);
+    
+    // Verifying the user's entry for a range number is a number greater than ONE (NOTE: All numbers, positive and negative, have a default boolean value of true, except for zero which has a boolean value of false. Also, NaN has a boolean value of false as well.)
+    while(randomNum <= 1 || !rangeNum){
+        rangeNum = prompt(`Please enter a number greater than 1`);
+        rangeNum = parseInt(rangeNum);
+    }
+
+    // alert(randomNum);
+
+    // Creates the random number using range number entered by the user
+    randomNum = Math.floor(Math.random() * rangeNum) + 1;
+
     alert(randomNum);
+
+    // Prompts user to enter a number of attempts allowed (AKA Number of guesses)
+    attempts = parseInt(prompt(`Please enter a number of attempts allowed:`));
+    
+    // Verifies the user's entry for a number of attempts allowed is a number greater than zero and one less than the range they set.
+    while (attempts < 1 || !attempts || attempts >= rangeNum){
+        attempts = prompt(`Please enter a number from 1 to ${rangeNum - 1}`)
+        attempts = parseInt(attempts);
+    }
+
+    // 
+    guess
+
     break;
 }
