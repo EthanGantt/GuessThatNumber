@@ -46,8 +46,15 @@ while(restartGame){
         attempts = parseInt(attempts);
     }
 
-    // 
-    guess
+    // Ask user ti enter a guess in the range that they set
+    guess = prompt(`Please enter a guess 1 to ${rangeNum}. You have ${attempts} attempt(s) left.`);
+
+    // Continue looping until the guesses the correct number or runs out of attempts (NOTE: Loops until a BREAK keyword is run)
+    while (true){
+        
+
+    break;
+    }
 
     break;
 }
